@@ -1,0 +1,77 @@
+# Haskell-specific
+dist
+dist-*
+cabal-dev
+*.o
+*.hi
+*.hie
+*.chi
+*.chs.h
+*.dyn_o
+*.dyn_hi
+.hpc
+.hsenv
+.cabal-sandbox/
+cabal.sandbox.config
+*.prof
+*.aux
+*.hp
+*.eventlog
+.stack-work/
+cabal.project.local
+cabal.project.local~
+.HTF/
+.ghc.environment.*
+
+# GHC JavaScript backend specific
+*.jsexe/
+*.js_hi
+*.js_o
+*.js_dyn_hi
+*.js_dyn_o
+
+# IDE/Editor folders
+.idea/
+.vscode/
+*.swp
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Project specific
+moka-dom-test
+moka-dom-test.js
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+
+# Build artifacts
+build/
+out/
+
+# Dependencies
+node_modules/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Miscellaneous
+*.bak
+*.cache
+*.patch
+*.diff

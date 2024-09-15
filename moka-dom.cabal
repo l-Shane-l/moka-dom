@@ -1,0 +1,126 @@
+cabal-version:      3.4
+name:               moka-dom
+version:            0.0.0.1
+-- The version follows the PVP (Package Versioning Policy):
+-- https://pvp.haskell.org
+-- As this is an alpha release, we start with 0.0.0.1
+
+synopsis:
+    A lightweight set of bindings for common JS DOM functions using the GHC JS backend.
+
+description:
+    Moka-DOM provides a set of Haskell bindings for common JavaScript DOM functions,
+    specifically designed to work with the GHC JavaScript backend. This library
+    aims to make DOM manipulation in Haskell straightforward when targeting JavaScript
+    as the compilation output. Please note that this is an alpha release and the API
+    may change significantly in future versions.
+
+
+-- URL for the project homepage or repository.
+homepage:           peregrinum.dev
+
+-- The license under which the package is released.
+license:            BSD-3-Clause
+
+-- The file containing the license text.
+license-file:       LICENSE
+
+-- The package author(s).
+author:             Shane Hamilton
+
+-- An email address to which users can send suggestions, bug reports, and patches.
+maintainer:         shane@peregrinum.dev
+
+-- A copyright notice.
+-- copyright:
+category:           Web
+build-type:         Simple
+
+-- Extra doc files to be distributed with the package, such as a CHANGELOG or a README.
+extra-doc-files:    CHANGELOG.md
+
+-- Extra source files to be distributed with the package, such as examples, or a tutorial module.
+-- extra-source-files:
+
+common warnings
+    ghc-options: -Wall
+
+library
+    -- Import common warning flags.
+    import:           warnings
+
+    -- Modules exported by the library.
+    exposed-modules:  Moka.DOM.Elements
+                    , Moka.DOM.Manipulation
+                    , Moka.DOM.Events
+                    , Moka.DOM.Utils
+                    , Moka.DOM.Helpers
+                    , Moka.DOM.URL
+                    , Moka.DOM.Storage
+                    , Moka.DOM.Cookies
+                    , Moka.DOM.Forms
+                    , Moka.DOM.Networking
+                    
+
+    -- Modules included in this library but not exported.
+    other-modules:    Moka.DOM.FFI.Utils_FFI
+                    , Moka.DOM.FFI.Storage_FFI
+                    , Moka.DOM.FFI.Cookies_FFI
+                    , Moka.DOM.FFI.Helpers_FFI
+                    , Moka.DOM.FFI.URL_FFI
+                    , Moka.DOM.FFI.Manipulation_FFI
+                    , Moka.DOM.FFI.Forms_FFI
+                    , Moka.DOM.FFI.Networking_FFI
+                    , Moka.DOM.FFI.Events_FFI
+                    , Moka.DOM.FFI.Elements_FFI
+
+    -- LANGUAGE extensions used by modules in this package.
+    default-extensions: ForeignFunctionInterface
+
+    -- Other library packages from which modules are imported.
+    build-depends:    base ^>=4.20.0.0
+                    , ghc-prim
+                    , text
+                    , aeson
+                    , bytestring
+
+    -- Directories containing source files.
+    hs-source-dirs:   lib
+
+    -- Base language which the package is written in.
+    default-language: Haskell2010
+
+executable moka-dom-test
+    -- Import common warning flags.
+    import:           warnings
+
+    -- .hs or .lhs file containing the Main module.
+    main-is:          Main.hs
+
+    -- Modules included in this executable, other than Main.
+    other-modules:  Tests.Cookies
+                  , Tests.Elements
+                  , Tests.Events
+                  , Tests.Helpers
+                  , Tests.Manipulation
+                  , Tests.Networking
+                  , Tests.Storage
+                  , Tests.URL
+                  , Tests.Utils
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+
+    -- Other library packages from which modules are imported.
+    build-depends:    base ^>=4.20.0.0
+                    , moka-dom
+                    , text
+                    , aeson
+
+
+    -- Directories containing source files.
+    hs-source-dirs:   test
+
+    -- Base language which the package is written in.
+    default-language: Haskell2010
+   
