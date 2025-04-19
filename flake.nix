@@ -9,14 +9,14 @@
       devShells.x86_64-linux.default = with import nixpkgs { system = "x86_64-linux"; }; with pkgs;
         let
           # Using your original GHC version
-          ghc = haskell.compiler.ghc9101;
-          ghc-js = haskell.compiler.ghc9101.override
+          ghc = haskell.compiler.ghc967;
+          ghc-js = haskell.compiler.ghc967.override
             {
               stdenv = stdenv.override { targetPlatform = pkgsCross.ghcjs.stdenv.targetPlatform; };
             };
           # Using haskell-language-server that matches your GHC version
           hls = haskell-language-server.override {
-            supportedGhcVersions = [ "9101" ];
+            supportedGhcVersions = [ "967" ];
           };
         in
         mkShell
@@ -33,18 +33,14 @@
               haskellPackages.implicit-hie # Tool to generate hie.yaml files
             ];
             shellHook = ''
-                            alias ghcjs=javascript-unknown-ghcjs-ghc
-              
-                            # Create or update cabal.project to disable problematic flags
-                            cat > cabal.project <<EOF
-              packages: .
-
-              -- Disable any problematic flags
-              package *
-                ghc-options: -v2
-              EOF
-
-                            echo "To generate hie.yaml, run: gen-hie > hie.yaml"
+              # Previous stuff
+  
+              # Set up Emscripten cache directory
+              mkdir -p $HOME/.emscripten_cache
+              export EM_CACHE=$HOME/.emscripten_cache
+  
+              # Disable WebGL in Emscripten
+              export EM_NO_WEBGL=1
             '';
           };
     };
