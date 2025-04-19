@@ -1,8 +1,8 @@
 -- Specify the GHC JavaScript backend compiler
-with-compiler: javascript-unknown-ghcjs-ghc-9.10.0.20240413
+-- with-compiler: javascript-unknown-ghcjs-ghc-9.10.0.20240413
 
 -- Specify the corresponding package tool
-with-hc-pkg:  javascript-unknown-ghcjs-ghc-pkg-9.10.0.20240413
+-- with-hc-pkg:  javascript-unknown-ghcjs-ghc-pkg-9.10.0.20240413
 
 -- Specify the packages to be built (in this case, just the current directory)
 packages: .
