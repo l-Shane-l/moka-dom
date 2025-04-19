@@ -26,7 +26,7 @@ Feedback, bug reports, and contributions are very welcome, but please note that 
 
 ## Requirements
 
-- This library uses the GHC JS backend. While I intend to provide support for setting this up in the near future, for now it's best to install the JS backend following the instructions [here](https://anvilproject.org/guides/content/creating-links).
+- This library uses the GHC JS backend. While I intend to provide support for setting this up in the near future, for now it's best to install the JS backend following the instructions [here](https://gitlab.haskell.org/ghc/ghc/-/wikis/javascript-backend/building).
 
 ## Considerations
 
