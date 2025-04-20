@@ -18,10 +18,13 @@ cabal.sandbox.config
 *.hp
 *.eventlog
 .stack-work/
+ 
+.emscripten_cache/
 cabal.project.local
 cabal.project.local~
 .HTF/
 .ghc.environment.*
+.cache
 
 # GHC JavaScript backend specific
 *.jsexe/
