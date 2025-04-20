@@ -1,16 +1,11 @@
--- Specify the GHC JavaScript backend compiler
-with-compiler: javascript-unknown-ghcjs-ghc-9.10.0.20240413
-
--- Specify the corresponding package tool
-with-hc-pkg:  javascript-unknown-ghcjs-ghc-pkg-9.10.0.20240413
-
--- Specify the packages to be built (in this case, just the current directory)
 packages: .
+
+with-compiler: javascript-unknown-ghcjs-ghc
+with-hc-pkg:  javascript-unknown-ghcjs-ghc-pkg
 
 -- Global package options
 package *
-  -- Force recompilation and enable deduplication for all packages
-  ghc-options: -fforce-recomp -dedupe
+  ghc-options: -fforce-recomp
 
 -- Set optimization level (0-2, where 2 is maximum)
 optimization: 2
