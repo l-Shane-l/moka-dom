@@ -1,0 +1,34 @@
+cradle:
+  cabal:
+    - path: "./lib"
+      component: "lib:moka-dom"
+
+    - path: "./test/Main.hs"
+      component: "moka-dom:exe:moka-dom-test"
+
+    - path: "./test/Tests/Cookies.hs"
+      component: "moka-dom:exe:moka-dom-test"
+
+    - path: "./test/Tests/Elements.hs"
+      component: "moka-dom:exe:moka-dom-test"
+
+    - path: "./test/Tests/Events.hs"
+      component: "moka-dom:exe:moka-dom-test"
+
+    - path: "./test/Tests/Helpers.hs"
+      component: "moka-dom:exe:moka-dom-test"
+
+    - path: "./test/Tests/Manipulation.hs"
+      component: "moka-dom:exe:moka-dom-test"
+
+    - path: "./test/Tests/Networking.hs"
+      component: "moka-dom:exe:moka-dom-test"
+
+    - path: "./test/Tests/Storage.hs"
+      component: "moka-dom:exe:moka-dom-test"
+
+    - path: "./test/Tests/URL.hs"
+      component: "moka-dom:exe:moka-dom-test"
+
+    - path: "./test/Tests/Utils.hs"
+      component: "moka-dom:exe:moka-dom-test"
